@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package libproptvr16;
+package libktvr17;
 
 /**
  *
  * @author Melnikov
  */
-public class LibProPtvr16 {
+public class LibKtvr17 {
 
     /**
      * @param args the command line arguments

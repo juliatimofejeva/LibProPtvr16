@@ -2,12 +2,13 @@
  * Class run application in do loop.
  * App worked while var repeat="r"
  */
-package libproptvr16;
+package libktvr17;
 
 import entity.Book;
 import entity.History;
 import entity.Reader;
 import interfaces.Insertable;
+import interfaces.Saveble;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,13 +25,13 @@ public class App {
     //SaverToFile необходимо реализовать через интерфейс Saveble
     //что то типа public Saveble saver = new SaverToFile();
     // и далее в коде использовать saver вместо saverToFile
-    public SaverToFile saverToFile;
+    public Saveble saver;
 
     public App() {
-        this.saverToFile = new SaverToFile();
-        this.books=saverToFile.loadBooks();
-        this.readers = saverToFile.loadReaders();
-        this.histories = saverToFile.loadHistories();
+        this.saver = new SaverToFile();
+        this.books=saver.loadBooks();
+        this.readers = saver.loadReaders();
+        this.histories = saver.loadHistories();
     }
     
 
@@ -53,22 +54,22 @@ public class App {
                     break;
                 case "1":
                     this.books.add(inserter.addBook());
-                    saverToFile.saveBooks(books);
+                    saver.saveBooks(books);
                     System.out.println("Книга добавлена!");
                     break;
                 case "2":
                     this.readers.add(inserter.addReader());
-                    saverToFile.saveReaders(readers);
+                    saver.saveReaders(readers);
                     System.out.println("Читатель добавлен!");
                     break; 
                 case "3":
                     this.histories.add(inserter.takeBook(books,readers));
-                    saverToFile.saveHistories(histories);
+                    saver.saveHistories(histories);
                     System.out.println("Книга выдана пользователю!");
                     break;
                 case "4":
                     this.histories.add(inserter.backBook(histories));
-                    saverToFile.saveHistories(histories);
+                    saver.saveHistories(histories);
                     System.out.println("Книга возвращена в библиотеку!");
                     break;
 

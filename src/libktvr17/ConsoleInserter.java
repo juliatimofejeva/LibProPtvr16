@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package libproptvr16;
+package libktvr17;
 
 
 import classes.BookCreator;
