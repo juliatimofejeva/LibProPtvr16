@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Melnikov
+ * @author 
  */
 public class App {
     public List<Book> books = new ArrayList<>();
@@ -28,7 +28,8 @@ public class App {
     public Saveble saver;
 
     public App() {
-        this.saver = new SaverToFile();
+        this.saver = new SaverToBase();
+        //this.saver = new SaverToFile();
         this.books=saver.loadBooks();
         this.readers = saver.loadReaders();
         this.histories = saver.loadHistories();
